@@ -43,13 +43,13 @@ app.get('/api/forecast', async (req, res) => {
 app.get('/api/geocoding', async (req, res) => {
   const { q, zip, lat, lon, limit, appid } = req.query;
 
-  let apiUrl = 'https://api.openweathermap.org/data/2.5/';
+  let apiUrl = 'https://api.openweathermap.org/geo/1.0/';
   if (q) {
-    apiUrl += `geo/1.0/direct?q=${q}`;
+    apiUrl += `direct?q=${q}`;
   } else if (zip) {
-    apiUrl += `geo/1.0/zip?zip=${zip}`;
+    apiUrl += `zip?zip=${zip}`;
   } else if (lat && lon) {
-    apiUrl += `geo/1.0/reverse?lat=${lat}&lon=${lon}`;
+    apiUrl += `reverse?lat=${lat}&lon=${lon}`;
   } else {
     return res.status(400).send('Bad Request: Missing required parameters.');
   }
