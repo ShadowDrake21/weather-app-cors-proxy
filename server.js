@@ -8,7 +8,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header(
     'Access-Control-Allow-Headers',
-    'Content-Type, Authorization, X-Requested-With, Pragma'
+    'Content-Type, Authorization, X-Requested-With, Pragma, Cache-Control'
   );
   next();
 });
