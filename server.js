@@ -10,7 +10,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/api/weather', async (req, res) => {
+app.get('/api/forecast', async (req, res) => {
   const { lat, lon, q, id, zip, units, appid, lang } = req.query;
 
   let apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?';
